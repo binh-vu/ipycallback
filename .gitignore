@@ -154,3 +154,5 @@ ipycallback/labextension/*.tgz
 
 # Packed lab extensions
 ipycallback/labextension
+
+.idea

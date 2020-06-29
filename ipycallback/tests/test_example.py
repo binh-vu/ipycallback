@@ -6,9 +6,8 @@
 
 import pytest
 
-from ..slow_js_callback import ExampleWidget
+from ..slow_tunnel import SlowTunnelWidget
 
 
 def test_example_creation_blank():
-    w = ExampleWidget()
-    assert w.value == 'Hello World'
+    w = SlowTunnelWidget()
