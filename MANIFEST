@@ -29,7 +29,7 @@ ipycallback/__init__.py
 ipycallback/_frontend.py
 ipycallback/_version.py
 ipycallback/slow_tunnel.py
-ipycallback/labextension/ipycallback-0.2.0.tgz
+ipycallback/labextension/ipycallback-0.2.1.tgz
 ipycallback/nbextension/__init__.py
 ipycallback/nbextension/static/extension.js
 ipycallback/nbextension/static/index.js
