@@ -1,6 +1,6 @@
 {
   "name": "ipycallback",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Use this widget to allow client side (javascript) to trigger event on the server side (python)",
   "keywords": [
     "jupyter",

@@ -37,6 +37,10 @@ class SlowTunnelWidget(DOMWidget):
         """
         self.on_receive_handler = callback
 
+    def send_msg(self, msg: str):
+        """Send a message to the channel"""
+        self.js_endpoint = (self.js_endpoint[0] + 1, msg)
+
     def push(self, version: int, msg: str):
         """Push a message back to the channel. Only push newer version"""
         if version > self.js_endpoint[0]:
