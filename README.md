@@ -93,6 +93,8 @@ def on_receive(version: int, msg: str):
     tunnel.send_msg_with_version(version, resp_msg)
 ```
 
+See [examples](./examples) for more.
+
 ## How does this work
 
 Low-level ipywidgets documentation: https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20Low%20Level.html
