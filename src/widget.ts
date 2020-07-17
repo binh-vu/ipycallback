@@ -65,6 +65,14 @@ export class SlowTunnelView extends DOMWidgetView {
     return version;
   }
 
+  send_msg_with_version(version: number, msg: string) {
+    let py_endpoint = this.model.get('py_endpoint');
+    if (version > py_endpoint[0]) {
+      this.model.set('py_endpoint', [version, msg]);
+      this.model.save_changes();
+    }
+  }
+
   receive_msg() {
     var value = this.model.get('js_endpoint');
     this.onReceiveHandler(value[0], value[1]);
