@@ -23,7 +23,8 @@ export class SlowTunnelModel extends DOMWidgetModel {
       _view_module: SlowTunnelModel.view_module,
       _view_module_version: SlowTunnelModel.view_module_version,
       py_endpoint: [0, ''],
-      js_endpoint: [0, '']
+      js_endpoint: [0, ''],
+      tunnel_id: ''
     };
   }
 
@@ -53,7 +54,7 @@ export class SlowTunnelView extends DOMWidgetView {
     if ((window as any).IPyCallback === undefined) {
       (window as any).IPyCallback = new Map();
     }
-    (window as any).IPyCallback.set(this.model.model_id, this);
+    (window as any).IPyCallback.set(this.model.get("tunnel_id"), this);
   }
 
   send_msg(msg: string) {

@@ -8,6 +8,7 @@
 A widget that allow javascript code to send some values to python code.
 """
 from typing import Callable
+from uuid import uuid4
 
 from ipywidgets import DOMWidget
 from traitlets import Unicode, Tuple, Int
@@ -75,9 +76,14 @@ class SlowTunnelWidget(DOMWidget):
 
     py_endpoint = Tuple(Int(0), Unicode(''), default_value=(0, '')).tag(sync=True)
     js_endpoint = Tuple(Int(0), Unicode(''), default_value=(0, '')).tag(sync=True)
+    tunnel_id = Unicode().tag(sync=True)
 
     def __init__(self, **kwargs):
+        if 'tunnel_id' not in kwargs:
+            kwargs['tunnel_id'] = str(uuid4())
+
         super().__init__(**kwargs)
+
         self.observe(self._on_receive, names='py_endpoint')
         self.on_receive_handler = default_callback
 
