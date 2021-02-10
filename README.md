@@ -57,7 +57,7 @@ tunnel.on_receive(handle_msg)
 5. Listen to messages from python (client). This will override any previous listeners.
 
 ```javascript
-window.IPyCallback.get("<tunnel.model_id>").on_receive((version, msg) => {
+window.IPyCallback.get("<tunnel.tunnel_id>").on_receive((version, msg) => {
     console.log('receive message', version, msg);
 });
 ```
@@ -65,7 +65,7 @@ window.IPyCallback.get("<tunnel.model_id>").on_receive((version, msg) => {
 6. Send messages from javascript to python (client).
 
 ```javascript
-let version = window.IPyCallback.get("<tunnel.model_id>").send_msg(JSON.stringify({"msg": "hello world"}));
+let version = window.IPyCallback.get("<tunnel.tunnel_id>").send_msg(JSON.stringify({"msg": "hello world"}));
 ```
 
 7. Implement a "synchronous" call-and-wait
